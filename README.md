@@ -31,16 +31,16 @@ Things you may want to cover:
 |password|string|null: false|
 |nickname|string|null: false|
 ### Association
-- has_many :messages, through: users_groups
-- has_many :groups, through: users_groups
+- has_many :messages, through: :users_groups
+- has_many :groups, through: :users_groups
 
 ## groups table
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :messages, through: users_groups
-- has_many :users, through: users_groups
+- has_many :messages, through: :users_groups
+- has_many :users, through: :users_groups
 
 ## users_groups table
 |Column|Type|Options|
