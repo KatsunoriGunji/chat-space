@@ -31,22 +31,24 @@ Things you may want to cover:
 |password|string|null: false|
 |nickname|string|null: false|
 ### Association
-- has_many :messages, through: :users_groups
+- has_many :messages
 - has_many :groups, through: :users_groups
+  has_many :users_groups
 
 ## groups table
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :messages, through: :users_groups
+- has_many :messages
 - has_many :users, through: :users_groups
+  has_many :users_groups
 
 ## users_groups table
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
-|group_id|integer|null: false|
+|user_id|references|foreign_key: true|
+|group_id|references|foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
@@ -56,8 +58,8 @@ Things you may want to cover:
 |------|----|-------|
 |body|text||
 |image|string||
-|user_id|integer|null: false|
-|group_id|integer|null: false|
+|user_id|references|foreign_key: true|
+|group_id|references|foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
