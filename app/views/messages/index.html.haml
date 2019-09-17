@@ -1,13 +1,14 @@
 .left-contents
   .left-contents__top-bar
     .left-contents__top-bar__username
-      user name
+      = current_user.name
     =link_to "", class: "left-contents__top-bar__button" do
       =fa_icon 'edit'
-    =link_to "", class: "left-contents__top-bar__button--right" do
+    =link_to edit_user_path(current_user), class: "left-contents__top-bar__button--right" do
       =fa_icon 'cog'
   .left-contents__main-bar
-    =render partial:"group"
+    - (1..10).each do |t|
+      =render partial:"group"
 .main-contents
   .main-contents__top-contents
     .main-contents__top-contents__group-info
@@ -18,7 +19,8 @@
     %input.main-contents__top-contents__edit-button{type: "button", value: "Edit"}
       
   .main-contents__middle-contents
-    =render partial: "message"
+    - (1..10).each do |t|
+      =render partial: "message"
   .main-contents__bottom-contents
     .main-contents__bottom-contents__content
       %form.main-contents__bottom-contents__content__message-form
