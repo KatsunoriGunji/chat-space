@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .left-contents {
     height: 100vh;
     width: 300px;
@@ -33,17 +37,20 @@
     }
     &__main-bar {
         width: 260px;
-        height: calc(100vh - 120px);
+        height: calc(100vh - 100px);
         padding: 20px 0 0 20px;
         overflow: auto;
         &__group {
-            margin-bottom: 40px;
+            text-decoration: none;
             &__group-name {
                 font-size: 20px;
                 margin-bottom: 5px;
+                color: white;
             }
             &__comment {
                 font-size: 11px;
+                color: white;
+                margin-bottom: 40px;
             }
         }
     }
