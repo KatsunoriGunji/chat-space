@@ -131,37 +131,35 @@
         position: absolute;
         bottom: 0;
         background-color: #ddd;
-        .content {
-            height: 70px;
-            width: calc(100vw - 455px);
+        .message-form {
+            width: calc(100vw - 495px);
+            height: 50px;
+            margin-top: 20px;
+            margin-left: 40px;
+            background-color: white;
             float: left;
-            &__message-form {
-                margin-top: 20px;
-                margin-left: 40px;
-                background-color: white;
-                .text {
-                    width: calc(100vw - 495px);
-                    line-height: 50px;
-                    border: none;
-                    &::placeholder {
-                        font-size: 16px;
-                        color: $dark;
-                        padding-left: 10px;
-                    }
-                }
-            }
-            &__image {
-                float: right;
-                z-index: 1;
-                padding: 0 10px 0 0;
-                position: relative;
-                bottom: 37px;
-                .select {
-                    display: none;
+            .text {
+                width: calc(100vw - 495px);
+                line-height: 50px;
+                border: none;
+                &::placeholder {
+                    font-size: 16px;
+                    color: $dark;
+                    padding-left: 10px;
                 }
             }
         }
-        &__send-button {
+        .image {
+            float: right;
+            z-index: 1;
+            padding: 0 10px 0 0;
+            position: relative;
+            bottom: 37px;
+            .select {
+                display: none;
+            }
+        }
+        .send-button {
             height: 50px;
             width: 100px;
             margin: 20px 40px 20px 15px;
