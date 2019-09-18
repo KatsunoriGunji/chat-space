@@ -55,3 +55,8 @@ gem "haml-rails"
 gem 'erb2haml'
 gem "font-awesome-rails"
 gem "devise"
+gem "carrierwave"
+gem 'mini_magick'
+gem 'pry-rails'
+gem 'compass-rails', '3.1.0'
+gem 'sprockets', '3.7.2'
