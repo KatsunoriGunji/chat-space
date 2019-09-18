@@ -1,0 +1,44 @@
+.left-contents
+  .top-bar
+    .top-bar__username
+      = current_user.name
+    =link_to new_group_path, class: "top-bar__button" do
+      =fa_icon 'edit'
+    =link_to edit_user_path(current_user), class: "top-bar__button--right" do
+      =fa_icon 'cog'
+  .main-bar
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group), class: "main-bar__group" do
+        .group-name
+          = group.name
+        .comment
+          メッセージはまだありません。
+.main-contents
+  .top-contents
+    .group-info
+      .group-info__group-name
+        タピオカの部屋
+      .group-info__members
+        Member : tapioka
+    %input.top-contents__edit-button{type: "button", value: "Edit"}
+      
+  .middle-contents
+    - (1..10).each do |t|
+      .message
+        .message__info
+          .username
+            test-user
+          .timestamp
+            2019/9/15
+        .message__text
+          test message<br>
+          test message<br>
+          test message
+  .bottom-contents
+    .content
+      %form.content__message-form
+        %input.text{type: "text", placeholder: "type a message"}
+      %label.content__image
+        = fa_icon 'image'
+        %input.select{type: "file"}
+    %input.bottom-contents__send-button{type: "button", value: "Send"}

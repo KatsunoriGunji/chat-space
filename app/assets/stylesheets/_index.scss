@@ -1,10 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
 .left-contents {
     height: 100vh;
     width: 300px;
     background-color: #2f3e51;
     float: left;
     color: white;
-    &__top-bar {
+    .top-bar {
         height: 100px;
         background-color: #253141;
         &__username {
@@ -31,19 +35,22 @@
             text-decoration: none;
         }
     }
-    &__main-bar {
+    .main-bar {
         width: 260px;
-        height: calc(100vh - 120px);
+        height: calc(100vh - 100px);
         padding: 20px 0 0 20px;
         overflow: auto;
         &__group {
-            margin-bottom: 40px;
-            &__group-name {
+            text-decoration: none;
+            .group-name {
                 font-size: 20px;
                 margin-bottom: 5px;
+                color: white;
             }
-            &__comment {
+            .comment {
                 font-size: 11px;
+                color: white;
+                margin-bottom: 40px;
             }
         }
     }
@@ -55,11 +62,11 @@
     background-color: white;
     float: right;
     position: relative;
-    &__top-contents {
+    .top-contents {
         height: 100px;
         width: calc(100vw - 300px);
         border-bottom: solid 1px #eeeeee;
-        &__group-info {
+        .group-info {
             height: 47px;
             float: left;
             position: relative;
@@ -84,22 +91,22 @@
             color: $accent;
         }
     }
-    &__middle-contents {
+    .middle-contents {
         height: calc(100vh - 276px);
         margin: 46px 40px 40px 40px;
         overflow: auto;
-        &__message {
+        .message {
             margin-bottom: 40px;
             &__info {
                 margin-bottom: 10px;
-                &__username {
+                .username {
                     font-size: 16px;
                     font-weight: bold;
                     line-height: 16px;
                     color: $dark;
                     float: left;
                 }
-                &__timestamp {
+                .timestamp {
                     font-size: 12px;
                     line-height: 12px;
                     color: $gray;
@@ -118,13 +125,13 @@
             }
         }
     }
-    &__bottom-contents {
+    .bottom-contents {
         height: 90px;
         width: calc(100vw - 300px);
         position: absolute;
         bottom: 0;
         background-color: #ddd;
-        &__content {
+        .content {
             height: 70px;
             width: calc(100vw - 455px);
             float: left;
@@ -132,7 +139,7 @@
                 margin-top: 20px;
                 margin-left: 40px;
                 background-color: white;
-                &__text {
+                .text {
                     width: calc(100vw - 495px);
                     line-height: 50px;
                     border: none;
@@ -142,15 +149,15 @@
                         padding-left: 10px;
                     }
                 }
-                &__image {
-                    float: right;
-                    z-index: 1;
-                    padding: 0 10px 0 0;
-                    position: relative;
-                    bottom: 37px;
-                    &__select {
-                        display: none;
-                    }
+            }
+            &__image {
+                float: right;
+                z-index: 1;
+                padding: 0 10px 0 0;
+                position: relative;
+                bottom: 37px;
+                .select {
+                    display: none;
                 }
             }
         }
