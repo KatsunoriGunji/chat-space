@@ -1,19 +1,5 @@
 .left-contents
-  .top-bar
-    .top-bar__username
-      = current_user.name
-    =link_to new_group_path, class: "top-bar__button" do
-      =fa_icon 'edit'
-    =link_to edit_user_path(current_user), class: "top-bar__button--right" do
-      =fa_icon 'cog'
-
-  .main-bar
-    - current_user.groups.each do |group|
-      = link_to group_messages_path(group), class: "main-bar__group" do
-        .group-name
-          = group.name
-        .comment
-          = group.show_last_message
+  = render partial: 'groups/side_bar'
 
 .main-contents
   .top-contents
@@ -22,7 +8,7 @@
         = @group.name
       .group-info__members
         Member : tapioka
-    %input.top-contents__edit-button{type: "button", value: "Edit"}
+    = link_to "Edit", edit_group_path(@group), class: "top-contents__edit-button"
 
   .middle-contents
     = render @messages
