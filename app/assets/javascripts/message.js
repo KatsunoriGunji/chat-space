@@ -33,25 +33,25 @@ $(function() {
         }
         e.preventDefault();
         $.ajax({
-                type: 'POST',
-                url: (window.location.href),
-                data: formData,
-                dataType: 'json',
-                processData: false,
-                contentType: false
-            })
-            .done(function(data) {
-                var message = buildMessage(data);
-                $('.middle-contents').append(message);
-                $('#message_content').val('');
-                $('#message_image').val('');
-                scrollBottom();
-            })
-            .fail(function(data) {
-                alert('エラー');
-            })
-            .always(function(data) {
-                $('.send-button').prop('disabled', false);
-            })
+            type: 'POST',
+            url: (window.location.href),
+            data: formData,
+            dataType: 'json',
+            processData: false,
+            contentType: false
+        })
+        .done(function(data) {
+            var message = buildMessage(data);
+            $('.middle-contents').append(message);
+            $('#message_content').val('');
+            $('#message_image').val('');
+            scrollBottom();
+        })
+        .fail(function(data) {
+            alert('エラー');
+        })
+        .always(function(data) {
+            $('.send-button').prop('disabled', false);
+        })
     });
 });
