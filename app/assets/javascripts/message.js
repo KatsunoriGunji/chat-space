@@ -43,8 +43,7 @@ $(function() {
         .done(function(data) {
             var message = buildMessage(data);
             $('.middle-contents').append(message);
-            $('#message_content').val('');
-            $('#message_image').val('');
+            $("#new_message")[0].reset();
             scrollBottom();
         })
         .fail(function(data) {
