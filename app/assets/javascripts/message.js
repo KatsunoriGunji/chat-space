@@ -8,7 +8,7 @@ $(function() {
             var html = `<div class="message">
                           <div class="message__info">
                             <div class="username">
-                              ${data.user_name}
+                              ${data.user_name.name}
                             </div>
                             <div class="timestamp">
                               ${data.created_at}
