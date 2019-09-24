@@ -13,8 +13,8 @@ $(function() {
                             <div class="timestamp">
                               ${data.created_at}
                             </div>
-                            </div>
-                            <div class="message__text">
+                          </div>
+                          <div class="message__text">
                             <p class="lower-message__content">
                               ${data.content}
                             </p>
@@ -45,6 +45,7 @@ $(function() {
             $('.middle-contents').append(message);
             $("#new_message")[0].reset();
             scrollBottom();
+            console.log(data);
         })
         .fail(function(data) {
             alert('エラー');
