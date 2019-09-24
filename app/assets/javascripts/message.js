@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
     $("#new_message").on("submit", function(e) {
         var input = $("#message_content").val();
         var formData = new FormData(this);
@@ -23,7 +23,6 @@ $(function() {
                         </div>`
             return html
         }
-
         function scrollBottom() {
             var target = $('.message').last();
             var position = target.offset().top + $('.middle-contents').scrollTop();
@@ -41,11 +40,11 @@ $(function() {
             contentType: false
         })
         .done(function(data) {
+          console.log(data);
             var message = buildMessage(data);
             $('.middle-contents').append(message);
             $("#new_message")[0].reset();
             scrollBottom();
-            console.log(data);
         })
         .fail(function(data) {
             alert('エラー');

@@ -10,7 +10,7 @@
         Member : 
         - @group.users.each do |user| 
           = user.name
-    = link_to "Edit", edit_group_path(@group), class: "top-contents__edit-button"
+    = link_to "Edit", edit_group_path(@group), class: "top-contents__edit-button", data: {"turbolinks" => false}
 
   .middle-contents
     = render @messages
