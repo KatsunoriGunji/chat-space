@@ -5,6 +5,6 @@ json.users do
 end
 
 json.user do
-  json.id @user_id
-  json.name @user_name
+  json.id params[:user_id]
+  json.name params[:user_name]
 end
