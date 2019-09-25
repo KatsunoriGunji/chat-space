@@ -40,38 +40,23 @@ $(document).on("turbolinks:load", function(){
     })
   });
   $(document).on("click", '.chat-group-user__btn--add', function(){
-    var i = 0;
-    $.ajax({
-      type: 'GET',
-      url: '/users',
-      data: { user_id: $(this).attr('data-user-id'),
-              user_name: $(this).attr('data-user-name')},
-      dataType: 'json'
-    })
-    .done(function(data) {
-      user = data.user
-      if (user.id !== null){
-          var html = buildHTMLremove(user);
-          $('#chat-group-form__field--right').append(html);
-          $(`#chat-group-user-${user.id}`).remove();
-      }
-    });
+    var user_id = $(this).attr('data-user-id');
+    var user_name = $(this).attr('data-user-name');
+    var user = {id: user_id, name: user_name};
+    if (user.id !== null){
+      var html = buildHTMLremove(user);
+      $('#chat-group-form__field--right').append(html);
+      $(`#chat-group-user-${user_id}`).remove();
+    }
   });
   $(document).on("click", '.chat-group-user__btn--remove', function(){
-    $.ajax({
-      type: 'GET',
-      url: '/users',
-      data: { user_id: $(this).attr('data-user-id'),
-              user_name: $(this).attr('data-user-name') },
-      dataType: 'json'
-    })
-    .done(function(data) {
-      user = data.user
-      if (user !== null){
-          $(`#chat-group-user-remove-${user.id}`).remove();
-          var html = buildHTMLadd(user);
-          $('#user-search-result').append(html);
-      }
-    });
+    var user_id = $(this).attr('data-user-id');
+    var user_name = $(this).attr('data-user-name');
+    var user = {id: user_id, name: user_name};
+    if (user !== null){
+      $(`#chat-group-user-remove-${user_id}`).remove();
+      var html = buildHTMLadd(user);
+      $('#user-search-result').append(html);
+    }
   });
 });
