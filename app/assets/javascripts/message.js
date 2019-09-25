@@ -40,7 +40,6 @@ $(document).on('turbolinks:load', function() {
             contentType: false
         })
         .done(function(data) {
-          console.log(data);
             var message = buildMessage(data);
             $('.middle-contents').append(message);
             $("#new_message")[0].reset();
