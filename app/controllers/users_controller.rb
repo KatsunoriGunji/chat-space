@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = params[:keyword] == "" ? {} : User.where("name LIKE ?", "#{params[:keyword]}%")
+    @users = params[:keyword] == "" ? {} : User.where("name LIKE ?", "#{params[:keyword]}%").where.not(id: current_user.id)
     @user_id = params[:user_id] == "" ? {} : params[:user_id]
     @user_name = params[:user_name] == "" ? {} : params[:user_name]
     respond_to do |format|

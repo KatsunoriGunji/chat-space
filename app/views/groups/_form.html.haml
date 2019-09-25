@@ -26,6 +26,10 @@
   .chat-group-form__field--left
     = f.label "チャットメンバー", class: "chat-group-form__label"
   .chat-group-form__field--right#chat-group-form__field--right
+    .chat-group-user{id: "chat-group-user-remove-#{current_user.id}"}
+      %input{name: 'group[user_ids][]', type: 'hidden', value: "#{current_user.id}"}
+      %p.chat-group-user__name
+        = current_user.name
     - if params[:id]
       - @group.users.each do |user|
         .chat-group-user{id: "chat-group-user-remove-#{user.id}"}
