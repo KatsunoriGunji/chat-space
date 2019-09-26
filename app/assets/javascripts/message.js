@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function() {
         var html = `<div class="message" data-id=' ${data.id} '>
                       <div class="message__info">
                         <div class="username">
-                          ${data.user_name.name}
+                          ${data.user_name}
                         </div>
                         <div class="timestamp">
                           ${data.created_at}
@@ -76,5 +76,5 @@ $(document).on('turbolinks:load', function() {
             $('.send-button').prop('disabled', false);
         })
     });
-    setInterval(reloadMessages, 10000);
+    setInterval(reloadMessages, 3000);
 });
