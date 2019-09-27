@@ -76,5 +76,9 @@ $(document).on('turbolinks:load', function() {
             $('.send-button').prop('disabled', false);
         })
     });
-    setInterval(reloadMessages, 10000);
+    var url = location.href.split('/');
+    if ( url[url.length - 1] == "messages" ){
+    setInterval(reloadMessages, 1000);
+    }
 });
+
