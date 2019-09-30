@@ -1,5 +1,4 @@
 $(document).on('turbolinks:load', function() {
-//$(function() {
     function buildMessage(data) {
         var imageHTML = data.image ? `<img class="lower-message__image" src=${data.image} alt="Image">` : ""
         var html = `<div class="message" data-id=' ${data.id} '>
@@ -79,9 +78,6 @@ $(document).on('turbolinks:load', function() {
     });
     var url = location.href.split('/');
     if ( url[url.length - 1] == "messages" ){
-    console.log(url[url.length - 1]);
-    setInterval(reloadMessages, 10000);
+    setInterval(reloadMessages, 5000);
     }
-    else {
-      console.log(url[url.length - 1]);}
 });
