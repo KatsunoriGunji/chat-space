@@ -1,5 +1,5 @@
-//$(document).on('turbolinks:load', function() {
-$(function() {
+$(document).on('turbolinks:load', function() {
+//$(function() {
     function buildMessage(data) {
         var imageHTML = data.image ? `<img class="lower-message__image" src=${data.image} alt="Image">` : ""
         var html = `<div class="message" data-id=' ${data.id} '>
@@ -83,6 +83,5 @@ $(function() {
     setInterval(reloadMessages, 1000);
     }
     else {
-      console.log(url[url.length - 1]);
-    }
+      console.log(url[url.length - 1]);}
 });
