@@ -38,10 +38,6 @@ $(document).on('turbolinks:load', function() {
           messageHTML = buildMessage(message);
           $('.middle-contents').append(messageHTML);
         });
-        $(current_user.groups).each(function(index, group){
-          //サイドバーのmessageを.show_last_messageで表示
-          $('.comment').text(group.show_last_message);
-        });
       })
       .fail(function() {
       });
