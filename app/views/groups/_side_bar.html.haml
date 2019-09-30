@@ -1,7 +1,7 @@
 .top-bar
   .top-bar__username
     = current_user.name
-  =link_to new_group_path, class: "top-bar__button" do
+  =link_to new_group_path, class: "top-bar__button", data: {"turbolinks" => false} do
     =fa_icon 'edit'
   =link_to edit_user_path(current_user), class: "top-bar__button--right" do
     =fa_icon 'cog'
