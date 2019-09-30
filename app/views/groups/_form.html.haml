@@ -11,10 +11,6 @@
     .chat-group-form__field--right
       = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
   .chat-group-form__field.clearfix
-    / この部分はインクリメンタルサーチ（ユーザー追加の非同期化)のときに使用します
-  .chat-group-form__field.clearfix
-
-    / この部分はインクリメンタルサーチ（ユーザー追加の非同期化)のときにも使用します
     .chat-group-form__field--left
       %label.chat-group-form__label{for: "chat_group_チャットメンバーを追加"}
         チャットメンバーを追加
@@ -32,12 +28,13 @@
         = current_user.name
     - if params[:id]
       - @group.users.each do |user|
-        .chat-group-user{id: "chat-group-user-remove-#{user.id}"}
-          %input{name: 'group[user_ids][]', type: 'hidden', value: "#{user.id}"}
-          %p.chat-group-user__name
-            = user.name
-          .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn{"data-user-id": "#{user.id}", "data-user-name": "#{user.name}"}
-            削除
+        -if user != current_user
+          .chat-group-user{id: "chat-group-user-remove-#{user.id}"}
+            %input{name: 'group[user_ids][]', type: 'hidden', value: "#{user.id}"}
+            %p.chat-group-user__name
+              = user.name
+            .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn{"data-user-id": "#{user.id}", "data-user-name": "#{user.name}"}
+              削除
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
