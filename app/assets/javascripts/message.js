@@ -79,6 +79,10 @@ $(function() {
     });
     var url = location.href.split('/');
     if ( url[url.length - 1] == "messages" ){
+    console.log(url[url.length - 1]);
     setInterval(reloadMessages, 1000);
+    }
+    else {
+      console.log(url[url.length - 1]);
     }
 });
