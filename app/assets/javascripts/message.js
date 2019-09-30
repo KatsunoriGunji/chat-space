@@ -80,7 +80,7 @@ $(document).on('turbolinks:load', function() {
     var url = location.href.split('/');
     if ( url[url.length - 1] == "messages" ){
     console.log(url[url.length - 1]);
-    setInterval(reloadMessages, 1000);
+    setInterval(reloadMessages, 5000);
     }
     else {
       console.log(url[url.length - 1]);}
